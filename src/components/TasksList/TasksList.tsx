@@ -45,7 +45,7 @@ function TaskList({ tasks, onStatusChange, onDelete}: TaskListProps) {
         return result
     }
 
-    const handleClick = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleClick = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         setText(e.target.value);
     }
@@ -74,7 +74,7 @@ function TaskList({ tasks, onStatusChange, onDelete}: TaskListProps) {
         <TaskFilter onFilterChange={onFilterChange}
         />
             
-        
+        <form name="form" onSubmit={handleClick}>
             <input 
             className="outline rounded-md" 
             type="text" 
@@ -82,6 +82,7 @@ function TaskList({ tasks, onStatusChange, onDelete}: TaskListProps) {
             onChange={(e) => setText(e.target.value)}/>
 
             <button className="outline m-2 rounded-md p-1" onClick= {() => handleClick}>Submit</button>
+        </form>
 
     
         

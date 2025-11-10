@@ -1,5 +1,6 @@
 import TaskList from "../TasksList/TasksList";
 import type { Task } from "../../Types/types";
+import SearchBar from "../TaskFilter/SearchBar";
 
 interface DashboardProps {
     tasks: Task[]
@@ -8,8 +9,12 @@ interface DashboardProps {
 
 function Dashboard({tasks}: DashboardProps) {
 
+
+
     return (
         <div>
+
+            <SearchBar/>
 
     <h3>Dashboard</h3>
         <div>
